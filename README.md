@@ -11,7 +11,7 @@ Using the cloud may not be desired or even legal because of privacy and/or secur
 
 ## Features
 * Fast and easy-to-use uploading and downloading of single files, including drag-and-drop to and from the application.
-* Completely offline, no internet connection needed on the reMarkable or PC.
+* Completely offline, no internet connection needed on the reMarkable or PC (you will need a USB-C cable, of course).
 * Privacy proof: no files are stored anywhere else besides the PC and tablet, and it's possible to automatically remove signed documents from the tablet.
 * Secure: since the reMarkable can be disconnected from the internet, it's easy to keep your documents safe.
 
@@ -19,4 +19,4 @@ Using the cloud may not be desired or even legal because of privacy and/or secur
 Download the .zip file containing the [latest release](https://github.com/fer3852/RemarkableSign/releases). Extract the file to any desired directory. You can run reMarkableSign.exe straight from the extracted folder.
 
 ## Usage
-For instructions on how to use reMarkable Sign, please refer to [the manual](reMarkableSign_Manual.pdf).
+For instructions on how to use reMarkable Sign, please refer to [the manual](reMarkableSign_Manual.pdf) (also included with the download).
