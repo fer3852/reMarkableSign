@@ -87,7 +87,14 @@ namespace RemarkableSign
             }
 
             // Initialise watcher
-            watcher = new FileSystemWatcher(folder);
+            try {
+                watcher = new FileSystemWatcher(folder);
+            } catch {
+                MessageBox.Show("Error: couldn't initialise file system watcher. " +
+                    "Make sure the right monitoring directory is configured.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
             watcher.IncludeSubdirectories = false;
             watcher.NotifyFilter = NotifyFilters.Attributes
                                  | NotifyFilters.CreationTime
