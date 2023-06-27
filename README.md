@@ -11,8 +11,9 @@ Using the cloud may not be desired or even legal because of privacy and/or secur
 
 ## Features
 * Fast and easy-to-use uploading and downloading of single files, including drag-and-drop to and from the application.
+* Minimal GUI for easy use.
 * Completely offline, no internet connection needed on the reMarkable or PC (you will need a USB-C cable, of course).
-* Privacy proof: no files are stored anywhere else besides the PC and tablet, and it's possible to automatically remove signed documents from the tablet.
+* Privacy proof: no files are stored or shared anywhere else besides the PC and tablet. It's possible to automatically remove signed documents from the tablet after signing them is complete.
 * Secure: since the reMarkable can be disconnected from the internet, it's easy to keep your documents safe.
 
 ## Installation
