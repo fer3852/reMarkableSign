@@ -21,3 +21,7 @@ Download the .zip file containing the [latest release](https://github.com/fer385
 
 ## Usage
 For instructions on how to use reMarkable Sign, please refer to [the manual](reMarkableSign_Manual.pdf) (also included with the download).
+
+## License
+This project is released under the [MIT License](LICENSE). You're free to use it both privately and commercially.
+To make preview images of downloaded files, the [PDFium viewer](https://github.com/pvginkel/PdfiumViewer/blob/master/LICENSE) is used. See its own page for its license.
