@@ -1,5 +1,5 @@
 # reMarkable Sign
-reMarkable Sign is an application developed in-house at Eindhoven University of Technology, Netherlands in order to facilitate the digital signing of documents using the reMarkable tablet/e-reader. It attempts to smoothen the process of uploading and downloading of single files to/from the reMarkable.
+reMarkable Sign is an application developed in-house at Eindhoven University of Technology, Netherlands in order to facilitate the digital signing of documents using the reMarkable tablet/e-reader. It attempts to smoothen the process of uploading and downloading single files to/from the reMarkable.
 
 ## Why reMarkable Sign?
 The nature of the reMarkable tablet makes it very suitable for signing documents or quickly adding handwritten remarks to an existing .pdf file. There are already various options to do these things:
