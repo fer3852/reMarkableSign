@@ -15,6 +15,7 @@ Using the cloud may not be desired or even legal because of privacy and/or secur
 * Completely offline, no internet connection needed on the reMarkable or PC (you will need a USB-C cable, of course).
 * Privacy proof: no files are stored or shared anywhere else besides the PC and tablet. It's possible to automatically remove signed documents from the tablet after signing them is complete.
 * Secure: since the reMarkable can be disconnected from the internet, it's easy to keep your documents safe.
+![Screenshot 1](reMarkableSign_screenshot1.png) ![Screenshot 2](reMarkableSign_screenshot2.png) ![Screenshot 3](reMarkableSign_screenshot3.png)
 
 ## Installation
 Download the .zip file containing the [latest release](https://github.com/fer3852/RemarkableSign/releases). Extract the file to any desired directory. You can run reMarkableSign.exe straight from the extracted folder.
