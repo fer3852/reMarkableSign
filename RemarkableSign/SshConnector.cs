@@ -79,11 +79,13 @@ namespace RemarkableSign
 				} catch (Exception ex) {
 					// Something went wrong. Likely we used wrong credentials.
 					MessageBox.Show("Error: couldn't establish ssh connection to 10.11.99.1! " +
-						"Check stored login credentials in the settings.",
+						"Check stored login credentials in the settings.\n\nError details: " + ex.Message,
 						"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					// We need to throw an exception here since we need to know that the
-					// deletion failed as we may need to warn of privacy issues etc.
-					throw ex;
+					// We need to show a warning here for privacy issues etc.
+					MessageBox.Show("Warning: couldn't automatically delete the " +
+						"previously uploaded file from the reMarkable! Remember to " +
+						"delete it manually to comply with data and privacy regulations!",
+						"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}));
 			t.Start();

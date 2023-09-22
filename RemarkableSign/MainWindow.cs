@@ -150,6 +150,14 @@ namespace RemarkableSign
                             // Files are identical. No need to reupload.
                             return;
                         }
+						//Sometimes for whatever reason this triggers for older files
+						//that were created days ago and haven't been modified since.
+                        //If the file was modified more than 1 minute ago, it's likely
+                        //a faulty trigger.
+						DateTime lastWriteTime = File.GetLastWriteTime(filename);
+                        if (DateTime.Now - lastWriteTime > new TimeSpan(0, 1, 0)) {
+                            return;
+                        }
 					}
                 }
             } 
@@ -279,21 +287,14 @@ namespace RemarkableSign
 						Upload(actionUrl, filename, true);
 
 						// After uploading, delete the previous file.
-						try {
-							SshConnector.DeleteFile(previousid,
-								ConfigurationManager.AppSettings["remarkableIP"],
-								ConfigurationManager.AppSettings["username"],
-								ConfigurationManager.AppSettings["password"]);
-						} catch {
-							// Delete failed. Just show a warning. 
-							MessageBox.Show("Warning: couldn't automatically delete the " +
-                                "previously uploaded file from the reMarkable! Remember to " +
-                                "delete it manually to comply with data and privacy " +
-                                "regulations!",
-								"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-						}
+						SshConnector.DeleteFile(previousid,
+							ConfigurationManager.AppSettings["remarkableIP"],
+							ConfigurationManager.AppSettings["username"],
+							ConfigurationManager.AppSettings["password"]);
                         return;
-					}
+					} else {//user didn't continue as an old file was still present.
+                        return;
+                    }
 				} else {
 					// No need to delete the previously uploaded file.
 					if (MessageBox.Show("You didn't download the previously uploaded file " + Path.GetFileName(filename) +
@@ -304,6 +305,8 @@ namespace RemarkableSign
 						// the same questions the next time round, and return.
 						Upload(actionUrl, filename, true);
                         return;
+					} else {//user didn't continue as an old file was still present.
+						return;
 					}
 				}
 			}
@@ -638,18 +641,10 @@ namespace RemarkableSign
                                 // have done their job and the download is correct (pretty
                                 // safe bet - no need to parse the pdf). Delete the file from
                                 // the reMarkable.
-                                try {
-                                    SshConnector.DeleteFile(id,
-                                        ConfigurationManager.AppSettings["remarkableIP"],
-                                        ConfigurationManager.AppSettings["username"],
-                                        ConfigurationManager.AppSettings["password"]);
-								} catch {
-									// Delete failed. Just show a warning. 
-									MessageBox.Show("Warning: couldn't automatically delete file " +
-										fname + " from ReMarkable! Remember to delete it manually to " +
-										"comply with data and privacy regulations!",
-										"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-								}
+                                SshConnector.DeleteFile(id,
+                                    ConfigurationManager.AppSettings["remarkableIP"],
+                                    ConfigurationManager.AppSettings["username"],
+                                    ConfigurationManager.AppSettings["password"]);
 							} else {
                                 throw new Exception();
 							}

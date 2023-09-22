@@ -130,9 +130,11 @@ namespace RemarkableSign
 			if (checkBoxAutodelete.Checked == true) {
 				textBoxUsername.Enabled = true;
 				textBoxPassword.Enabled = true;
+				buttonDeleteFiles.Enabled = true;
 			} else {
 				textBoxUsername.Enabled = false;
 				textBoxPassword.Enabled = false;
+				buttonDeleteFiles.Enabled = false;
 			}
 		}
 
